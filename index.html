@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyMoodle — Plateforme d'apprentissage</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Page d'accès par ID -->
+  <section id="login-page" class="page active">
+    <div class="login-wrapper">
+      <div class="login-card">
+        <div class="logo">
+          <span class="logo-icon">📚</span>
+          <h1>MyMoodle</h1>
+          <p>Plateforme d'apprentissage</p>
+        </div>
+        <form id="login-form" class="login-form">
+          <label for="user-id">Identifiant</label>
+          <input type="text" id="user-id" name="user-id" placeholder="Entrez votre ID" required autocomplete="off">
+          <button type="submit" class="btn btn-primary">Accéder au tableau de bord</button>
+        </form>
+        <p class="hint">Utilisez n'importe quel ID pour accéder (ex: <code>etudiant01</code>)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tableau de bord -->
+  <section id="dashboard-page" class="page">
+    <header class="dashboard-header">
+      <div class="header-left">
+        <span class="logo-mini">📚</span>
+        <h2>MyMoodle</h2>
+      </div>
+      <div class="header-right">
+        <span class="user-badge" id="current-user">—</span>
+        <button type="button" class="btn btn-outline" id="logout-btn">Déconnexion</button>
+      </div>
+    </header>
+
+    <main class="dashboard-main">
+      <div class="welcome-banner">
+        <h3>Bienvenue, <span id="welcome-name">Utilisateur</span></h3>
+        <p>Voici votre tableau de bord et vos cours.</p>
+      </div>
+
+      <section class="dashboard-grid">
+        <div class="card stats-card">
+          <h4>Vue d'ensemble</h4>
+          <ul class="stats-list">
+            <li><span class="stat-value" id="stat-courses">0</span> Cours inscrits</li>
+            <li><span class="stat-value" id="stat-progress">0</span> % Complété</li>
+            <li><span class="stat-value" id="stat-badges">0</span> Badges</li>
+          </ul>
+        </div>
+
+        <div class="card courses-card">
+          <h4>Mes cours</h4>
+          <ul class="courses-list" id="courses-list">
+            <li class="course-item">
+              <span class="course-icon">📖</span>
+              <div>
+                <strong>Introduction au développement web</strong>
+                <span class="course-progress">Progression : 25 %</span>
+              </div>
+            </li>
+            <li class="course-item">
+              <span class="course-icon">🎨</span>
+              <div>
+                <strong>CSS & design responsive</strong>
+                <span class="course-progress">Progression : 10 %</span>
+              </div>
+            </li>
+            <li class="course-item">
+              <span class="course-icon">⚙️</span>
+              <div>
+                <strong>JavaScript avancé</strong>
+                <span class="course-progress">Progression : 0 %</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card activity-card">
+          <h4>Activité récente</h4>
+          <ul class="activity-list">
+            <li><span class="activity-dot"></span> Connexion au tableau de bord</li>
+            <li><span class="activity-dot"></span> Cours « Introduction au développement web » consulté</li>
+            <li><span class="activity-dot"></span> Quiz « HTML de base » complété</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
